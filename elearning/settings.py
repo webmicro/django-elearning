@@ -73,16 +73,10 @@ WSGI_APPLICATION = 'elearning.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_test1',
-        'HOST' : 'localhost',
-        'USER' : 'root',
-        'PASSWORD' : ''
-    }
-}
-
+try :
+    from .local_settings import *
+except Exception:
+    pass
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
