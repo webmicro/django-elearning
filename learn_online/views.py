@@ -6,7 +6,8 @@ def home(request):
     return render( request, 'home.html')
 
 def about(request):
-    return render( request, 'about.html')
+    all_expert = Experts.objects.filter(display_about_page=True).all()
+    return render( request, 'about.html' , { 'all_expert': all_expert })
 
 def courses(request):
     return render( request, 'courses.html')
