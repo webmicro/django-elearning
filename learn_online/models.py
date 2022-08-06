@@ -1,7 +1,5 @@
-from pyexpat import model
-from tokenize import blank_re
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Experts (models.Model):
@@ -16,3 +14,23 @@ class Experts (models.Model):
 
     def __str__( self ):
         return self.first_name
+
+class Course ( models.Model ):
+
+    no_students = (
+        (5, '5 Students'),
+        (10, '10 Students'),
+        (15, '15 Students'),
+        (20, '20 Students'),
+        (25, '25 Students'),
+        (30, '30 Students')
+    )
+    course_name = models.CharField( max_length= 128)
+    fee = models.FloatField( max_length=20)
+    duration =  models.CharField(max_length=100)
+    total_student =  models.IntegerField( max_length=11, choices=no_students)
+    trainer = models.CharField( max_length=100)
+    photo = models.ImageField( upload_to = "courses/")
+    description = RichTextField()
+
+
