@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.db import models
 from ckeditor.fields import RichTextField
 # Create your models here.
@@ -28,9 +29,17 @@ class Course ( models.Model ):
     course_name = models.CharField( max_length= 128)
     fee = models.FloatField( max_length=20)
     duration =  models.CharField(max_length=100)
-    total_student =  models.IntegerField( max_length=11, choices=no_students)
+    total_student =  models.IntegerField( choices=no_students)
     trainer = models.CharField( max_length=100)
     photo = models.ImageField( upload_to = "courses/")
     description = RichTextField()
+    display = models.BooleanField( default=True)
 
+
+class Contact (models.Model):
+    first_name = models.CharField( max_length= 64 )
+    last_name = models.CharField( max_length= 64 )
+    email = models.CharField( max_length= 64, default=NULL )
+    subject = models.CharField( max_length=128)
+    message = models.TextField()
 

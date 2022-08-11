@@ -432,3 +432,12 @@
     padding-right: 0;
     border-right: none;
 }
+
+
+/*** Button ***/
+.button {
+    background-color: aqua;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
