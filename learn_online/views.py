@@ -10,7 +10,7 @@ def about(request):
     return render( request, 'about.html' , { 'all_expert': all_expert })
 
 def courses(request):
-    return render( request, 'courses.html')
+    return render( request, 'courses.html' )
 
 def team(request):
     data = Experts.objects.all()
@@ -19,3 +19,5 @@ def team(request):
 
 def contact(request):
     return render( request, 'contact.html')
+def sign(request):
+    return render(request, 'signup.html')

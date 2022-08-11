@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-3.jpg' %}" alt="" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">Sign Up</h6>
+                <div class="body">
+                    <div class="container">
+                    <div class="heading">
+                        {% comment %} <h1>Sign Up</h1> {% endcomment %}
+                        <h4>Fill up the form to register</h4>
+                    </div>
+                    
+                        <form class="form" name="sign-up" method="post" action="">
+                            <p><input type="text" placeholder="First Name" value=""></p>
+                            <p><input type="text" placeholder="Last Name" value=""></p>
+                            <p><input type="text" placeholder="Email" value=""></p>
+                            <p><input type="text" placeholder="Phone Number" value=""></p>
+                            <p><input type="" placeholder="Date Of Birth"></p>
+                            <p><select name="course" id="">
+                                <option>Course Preference</option>
+                                <option>Python</option>
+                                <option>Java</option>
+                                <option>C++</option>
+                                <option>Java Script</option>
+                                <option>SQL</option>
+                                </select></p>
+                           <p><input type="checkbox" name="agree" value="1"> I agree with the terms of use and policy</p>
+                            <p><input type="button" class="button" value="Register"></p>
+                
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
