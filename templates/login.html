@@ -11,26 +11,21 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <h6 class="section-title bg-white text-start text-primary pe-3">Sign Up</h6>
+                <h6 class="section-title bg-white text-start text-primary pe-3">Login</h6>
                 <div class="body">
                     <div class="container">
                     <div class="heading">
-                        {% comment %} <h1>Sign Up</h1> {% endcomment %}
-                        <h4>Fill up the form to register</h4>
+                        {% comment %} <h1>Sign Up</h1> {% endcomment %}                        
                     </div>
                         {% for mess in messages %}
                         <p>{{mess}}</p>
                         {% endfor %}
-                        <form class="form" name="sign-up" method="POST" action="{% url 'signup' %}">
+                        <form class="form" name="login-up" method="POST" action="{% url 'login' %}">
                             {% csrf_token %}
-                            <p><input type="text" name="fname" placeholder="First Name" value=""></p>
-                            <p><input type="text" name="lname" placeholder="Last Name" value=""></p>
-                            <p><input type="text" name="email" placeholder="Email" value=""></p>
                             <p><input type="text" name="username" placeholder="username" value=""></p>
                             <p><input type="password" name="password" placeholder="Password" value=""></p>
-                            <p><input type="password" name="conf_password" placeholder="Confirm Password" value=""></p>
                             
-                            <p><input type="submit" class="button" value="Register"></p>
+                            <p><input type="submit" class="button" value="Login"></p>
                 
                         </form>
                     </div>
