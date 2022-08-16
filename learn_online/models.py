@@ -30,7 +30,7 @@ class Course ( models.Model ):
     fee = models.FloatField( max_length=20)
     duration =  models.CharField(max_length=100)
     total_student =  models.IntegerField( choices=no_students)
-    trainer = models.CharField( max_length=100)
+    trainer = models.ForeignKey(Experts, on_delete=models.CASCADE)
     photo = models.ImageField( upload_to = "courses/")
     description = RichTextField()
     display = models.BooleanField( default=True)

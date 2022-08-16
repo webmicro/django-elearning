@@ -19,6 +19,9 @@
             <a href="{% url 'team' %}" class="nav-item nav-link {% if request.path == team_page %}active{% endif %}">Our Expert</a>
             <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == contact_page %}active{% endif %}">Contact</a>
         </div>
+        <form method="GET" action="{% url 'search' %}">
+        <p><input type="text" name='search' value="{{ request.GET.search }}"><input type="submit" name="submit" value="Search" />
+        </form>
         {% if user.is_authenticated %}
          
         <a href="{% url 'logout' %}" class="btn btn-primary py-4 px-lg-5 ">Logout<i class="fa fa-arrow-right ms-3"></i></a>

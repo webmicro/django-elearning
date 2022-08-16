@@ -3,6 +3,8 @@ from django.contrib import messages
 from .models import Experts, Contact, Course
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.db.models import Q
+
 # Create your views here.
 
 def home(request):
@@ -96,4 +98,11 @@ def course_detail( request, id ):
 def my_logout( request ):
     logout( request )
     return redirect('/')       
-     
+
+def search(request):
+    if 'search' in request.GET :
+        search = request.GET['search']
+        all_course = Course.objects.filter(Q(course_name__contains =search)|Q(description__icontains=search))
+        return render(request, 'search.html', { 'all_course': all_course})
+    else:    
+        return render(request, 'search.html')
