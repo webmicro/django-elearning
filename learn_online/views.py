@@ -64,7 +64,12 @@ def sign(request):
         if is_error == False:
             obj_user = User.objects.create_user(username=username, password=password, email=email, first_name = fname, last_name= lname  )
             obj_user.save()
-            return redirect('login')
+            user = authenticate(request, username=username, password=password, email=email, first_name = fname, last_name= lname)
+            if user is not None :
+                login( request, user )
+                return redirect('/home')
+            else:
+                messages.error( request , 'Wrong credential')
 
     return render(request, 'signup.html')
 
@@ -78,7 +83,7 @@ def my_login( request ):
         user = authenticate( request, username=username, password=password)
         if user is not None :
             login( request, user )  
-            return redirect('/')            
+            return redirect('/home')            
         else:
             messages.error( request , 'Wrong username or password') 
 
@@ -90,4 +95,5 @@ def course_detail( request, id ):
 
 def my_logout( request ):
     logout( request )
-    return redirect('/')               
+    return redirect('/')       
+     

@@ -1,9 +1,11 @@
 /********** Template CSS **********/
+/********** Template CSS **********/
 :root {
     --primary: #06BBCC;
     --light: #F0FBFC;
     --dark: #181d38;
 }
+
 
 .fw-medium {
     font-weight: 600 !important;
@@ -431,4 +433,14 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+.button {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    background-color: #06BBCC;
+    border-radius: 20px;
+    width: 180px;
+    color: #F0FBFC;
+    height: 40px;
 }

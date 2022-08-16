@@ -48,6 +48,11 @@
 .btn.btn-secondary {
     color: #FFFFFF;
 }
+.btnn.btn-primary{
+    margin-left: 51.5%;
+    color: #FFFFFF;
+}
+
 
 .btn-square {
     width: 38px;
@@ -217,9 +222,25 @@
     position: relative;
     display: inline-block;
     text-transform: uppercase;
+    margin-left: 30%;
+}
+.sub-title{
+    color: #181d38;
+    text-align: center;
 }
 
-.section-title::before {
+.section-title:: {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.sections-titles:: {
     position: absolute;
     content: "";
     width: calc(100% + 80px);
@@ -240,6 +261,7 @@
     background: var(--primary);
     z-index: -1;
 }
+
 
 .section-title.text-start::before {
     width: calc(100% + 40px);
@@ -432,12 +454,77 @@
     padding-right: 0;
     border-right: none;
 }
-
-
-/*** Button ***/
 .button {
-    background-color: aqua;
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
     transition: .5s;
+    background-color: #181d38;
+    border-radius: 20px;
+    width: 180px;
+    color: #F0FBFC;
+    height: 40px;
+}
+.text-primaryy{
+    margin-top: 9px;
+    color: #06BBCC;
+    
+}
+.forms{
+    text-align: center;
+    height: 356px;
+    width: 396px;
+    padding-top: 2rem;
+    background-color: ;
+    margin-left: 10%;
+    background-color: #e0dfdf;
+    border-radius: 8px;
+    box-shadow: #06BBCC;
+}
+.forms input{
+    font-size: 20px;
+    width: 364px;
+    height: 63px;
+    border-radius: 6px;
+    border: 2px solid white;
+    display: inline-block;
+    margin: auto;
+    padding: 6px 8px;
+    /* background-color: #181d38; */
+}
+
+p{
+    margin-top: 1rem;
+}
+.form{
+    text-align: center;
+    height: 396px;
+    width: 396px;
+    padding-top: 12px;
+    background-color: ;
+    margin-left: 10%;
+    background-color: #e0dfdf;;
+    border-radius: 8px;
+    box-shadow: #06BBCC;
+}
+.form input{
+    font-size: 20px;
+    width: 300px;
+    height: 35px;
+    border-radius: 6px;
+    background-color:  ;
+    display: inline-block;
+    margin: auto;
+    padding: 6px 8px;
+    border: 2px solid white;
+    
+}
+.form .button{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+    background-color: #181d38;
+    border-radius: 20px;
+    width: 180px;
+    color: #F0FBFC;
+    height: 50px;
 }
